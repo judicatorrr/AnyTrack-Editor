@@ -1,0 +1,326 @@
+AnyTrack Editor v0.12.8
+======================
+
+- Added outlined, larger local-server checkboxes for both themes.
+- Connected setup stages 01–03 with a visible vertical progress rail.
+- Added confirmed deletion of downloaded regional maps and active route data.
+- Kept manual .osm.pbf selection available while the server is running.
+- Made search and map-provider panels independently movable.
+- Fixed waypoint hover cache invalidation so numbers change into delete crosses.
+- Removed the redundant Move panel caption from route controls.
+
+AnyTrack Editor v0.12.7
+======================
+
+- Fixed silent automatic map downloads when a local GraphHopper process is
+  still active; the owned server is stopped before the download begins.
+- Added byte-level map download progress, downloaded-region checkmarks and an
+  overwrite confirmation for existing extracts.
+- Combined server state and controls into one prominent Local server card.
+- Combined language, theme and map-cache settings into one compact section.
+- Rebalanced the map-preparation step into two columns and added visual icons.
+- Filtered Dropwizard route listings such as POST /tasks/gc from crash summaries.
+
+AnyTrack Editor v0.12.6
+======================
+
+- The system close button exits route mode instead of closing the whole app;
+  normal application exit now asks for confirmation.
+- Added a green/red local GraphHopper indicator to the status bar.
+- Renamed Cut to Delete and replaced the scissors with a trash icon.
+- Restored readable minimum sizes for map/chart panes.
+- Enlarged and recoloured the route tool panel, with icon-based Distance and
+  Elevation gain cards.
+- Added a repository-level README.md for GitHub.
+
+AnyTrack Editor v0.12.5
+======================
+
+- Added a three-step local GraphHopper setup with automatic Geofabrik region
+  download, while retaining manual .osm.pbf selection.
+- Any route waypoint can be removed directly from the map; a previously built
+  route is recalculated after removal.
+- Route controls now show distance and elevation gain when elevation samples
+  are available from GraphHopper.
+- Fixed click handling for the map download control and route-profile combo by
+  isolating interactive children from panel drag handling.
+- Made the map/chart splitter substantially more flexible in both layouts.
+- Added a proper gear icon for Settings and stronger toolbar labels.
+
+AnyTrack Editor v0.12.4
+======================
+
+- Fixed route-panel dragging so releasing the mouse cannot leave the map in a
+  continuing pan gesture.
+- Local GraphHopper is the default routing source and starts with AnyTrack
+  Editor when its prepared database is compatible.
+- Detects pre-elevation GraphHopper databases before launch and requests a
+  one-time rebuild instead of displaying the Java dimension mismatch.
+- Reworked the local routing settings into distinct status, setup and server
+  cards; Start, Stop and Test now have coloured emphasis and matching icons.
+- Route mode now hides Undo, Redo and the chart-layout controls as well as the
+  file and validation actions.
+
+AnyTrack Editor v0.12.3
+======================
+
+- Geometry-only GPX routes no longer receive fictitious one-second timing,
+  derived speeds or false GPS anomaly warnings when reopened.
+- Added SRTM elevation and bilinear interpolation to newly prepared local
+  GraphHopper databases.
+- Reworked route-panel dragging across buttons and empty areas, reduced its
+  height and added a consistent open-hand cursor.
+- Updated route, track-check and file-conversion icons; added cloud/local
+  service icons, symmetric Undo/Redo buttons and an illustrated About dialog.
+- Removed the redundant Activity heading above the file drop zone.
+
+AnyTrack Editor v0.12.2
+======================
+
+- Added direct Save GPX to route-building mode. Planned GPX files contain
+  route geometry and elevation only, without artificial speed or timestamps.
+- Route controls can now be dragged freely across the map and retain their
+  last position between route-mode sessions.
+- Save Result, Save in another format, Create route and Check track for errors
+  are hidden from the top toolbar while route-building mode is active.
+
+AnyTrack Editor v0.12.1
+======================
+
+- Replaced the dense track-warning message with a structured dialog using
+  semantic icons, dividers and separate Review now / Later actions.
+- Expired GraphHopper quota data now resets to zero used credits instead of
+  displaying a stale remainder after the daily reset.
+- Added persistent zoom-in and zoom-out controls to the right edge of maps.
+- Reduced the route-placement pin cursor and route-action icon slightly.
+
+AnyTrack Editor v0.12.0
+======================
+
+- Moved the Activity and statistics sidebar to the left side of the workspace.
+- Route mode now expands the map and temporarily hides charts and activity panels, restoring them on exit.
+- Preserves route waypoints and calculated geometry between route-mode sessions until Clear is selected.
+- Removed the driving mode from the route-mode selector.
+- Added online river rafting routes that follow connected OpenStreetMap waterways without consuming GraphHopper credits.
+- Made the status-bar resource monitor resilient when process information is temporarily unavailable.
+
+AnyTrack Editor v0.11.0
+======================
+
+- Embedded route building into the main map so loaded tracks stay visible.
+- Added an OpenStreetMap place search aligned with the map-provider controls.
+- Both floating map panels now move together between top and bottom positions.
+- Added click-to-insert and drag-to-move route control points.
+- Added route creation from the active loaded track with shape-preserving reduction to 50 waypoints.
+- Added live CPU and RAM usage to the status bar, including local GraphHopper child processes.
+
+AnyTrack Editor v0.10.9
+======================
+
+- Fixed GraphHopper 11 map import by adding the required racing-bike and MTB encoded values.
+- Error dialogs now show the root Java error and the full log location instead of the final stack frame.
+- Added staged import progress and a RAM recommendation based on the selected PBF size.
+- Replaced the point-placement cursor with the supplied black pin artwork without changing the app icon.
+- Reordered route-planner actions into primary and secondary rows and improved disabled-button styling.
+- Localized the Settings Close button.
+
+AnyTrack Editor v0.10.8
+======================
+
+- Added a guided local GraphHopper 11 setup with portable Java 25, OSM PBF selection, map import, start, stop and connection status.
+- Added a persistent Hosted service / Local GraphHopper selector in Settings.
+- Local routing binds to 127.0.0.1, needs no API key or cloud credits and sends up to 50 waypoints in one request.
+- Kept the optional engine and regional map outside the application archive so the base package stays compact.
+- Removed Open from the toolbar; the Activity drop zone, drag-and-drop and Ctrl+O remain available.
+- Updated the empty-workspace hint to point to the Activity panel instead of the removed button.
+
+AnyTrack Editor v0.10.7
+======================
+
+- Restored the previous application icon from v0.10.5.
+- The supplied pin is now used only for route-building controls and windows.
+- Fixed GraphHopper credit updates when the API omits the rate-limit total or varies header casing.
+- Added walking, running, basic cycling, road cycling, MTB, driving and local direct routing modes.
+- Clearly labels advanced profiles that require a paid hosted plan or a configured local server.
+
+AnyTrack Editor v0.10.6
+======================
+
+- Replaced the application artwork with the supplied location-pin icon.
+- Added a visible click-or-drop target for FIT, GPX and TCX workout files.
+- Removed GraphHopper quota probes that could return HTTP 400.
+- Credit totals now refresh from successful route-response rate-limit headers.
+- Quota errors no longer expose the API key or request URL in the interface.
+
+AnyTrack Editor v0.10.5
+======================
+
+- Added a GraphHopper daily-credit card with used/limit totals, progress and reset countdown.
+- Refreshes quota information from GraphHopper and after successful route requests.
+- Grouped Language and appearance, Map cache and Route building into matching outlined cards.
+
+AnyTrack Editor v0.10.4
+======================
+
+- GPS anomaly review: detects isolated excursions and abrupt teleports.
+- High-confidence outliers are preselected; ambiguous jumps require review.
+- Anomalies are highlighted on the map and removal supports Undo/Redo.
+- Track colours and filenames moved to a map legend.
+- Toolbar icons changed to a compact neutral outline system.
+- "Save File" renamed to "Save Result".
+- Application renamed to AnyTrack Editor for FIT, GPX and TCX routes.
+
+Track Editor v0.8.2
+===================
+
+- Removed the redundant Telemetry title from the combined chart.
+- Moved every metric title and its colour-matched min/max/average into the plot.
+- Aligned the speed header with the other metric charts below the distance axis.
+- Moved smoothing and fit-all controls beside the metric buttons, with the
+  Separate / Combined switch on the row below.
+- Centred the map-download, settings and help toolbar controls.
+
+Track Editor v0.8.1
+===================
+
+- Made map-wheel zoom preserve the geographic point under the mouse cursor.
+- Renamed Save Result to Save File.
+- Added PNG, ICO and ICNS application icons to runtime and build workflows.
+- Bounded the tile-memory cache, coalesced tile repaints and reused GPS arrays.
+
+Track Editor v0.8.0
+===================
+
+- Renamed Save As to Save Result and kept explicit single/combined/separate output choices.
+- Added Save in another format for converting the active track to GPX or TCX.
+- Added background download of missing map tiles around visible routes for offline use.
+- Added a Settings window with persistent RU/EN language and dark/light appearance controls.
+- Added map-cache size information, confirmation and cache clearing.
+- Rewrote the About text in plain language and kept the local-processing privacy note.
+- Added separate launch/build helpers and instructions for Windows, macOS and Linux.
+
+Track Editor v0.7.0
+===================
+
+- Cached map/route layers and telemetry curves independently of hover overlays.
+- Vectorized GPS projection, selection and movement calculations; bounded smoothing cache.
+- Coalesced selection detail refreshes and smoothing updates for responsive dragging.
+- Removed persistent dots from highlighted GPS segments.
+- Replaced chart and sport dropdowns with two-position controls, with cycling/running icons.
+- Removed Reset from the toolbar; kept Undo/Redo and fit-all telemetry zoom.
+- Listed montage sources on separate lines in a bounded scrollable block.
+- Added aligned distance ticks above telemetry, with active-source handling for overlaps.
+- Replaced arbitrary elapsed-time ticks with round 10/15-minute steps and closer zoom subdivisions.
+
+Track Editor v0.6.0
+===================
+
+- Separate metric charts with independent native-unit ranges; combined chart toggle.
+- Right-aligned min / max / mean summaries for every chart.
+- Shared time, selection, cursor and horizontal zoom across charts.
+- Cycling, running and walking statistics: moving speed or min/km pace.
+- Selection highlights GPS segments on the map, including across multiple files.
+- Larger layout buttons, corrected reset icon and full cursor-overlay repainting.
+- Explicit bottom-axis orientation retained for pyqtgraph 0.14 startup compatibility.
+
+Track Editor v0.5.2
+===================
+
+- Renamed the application for equal FIT, GPX and TCX support.
+- Rebuilt sparse heart-rate rendering as a continuous antialiased curve; comparison tracks no longer degrade into point-like dashes.
+- Added chronological montage layout for non-overlapping recordings while preserving overlays for simultaneous files.
+- Added source separators, time spans and a floating Cut / Edit / Zoom selection toolbar.
+- Added exact selection-bound editing.
+- Rebuilt aligned Overall statistics and added a separate Selected range statistics card.
+- Made montage range edits apply to all affected sources in one undoable command.
+- Added explicit multi-track save choices: active source, combined GPX or separate files.
+
+FIT Editor v0.4.0
+=================
+
+- Added a per-track trash button that removes an activity from the session without deleting its source file.
+- Enlarged summary values and moved smaller metric labels underneath.
+- Added matching outline icons to Crop, Delete range and Reset, and unified the complete toolbar icon style.
+- Added independent drag handles to both timeline selection edges.
+- Added a cursor-following telemetry bubble, curve markers and a synchronized GPS marker on the map.
+- Added combined telemetry rendering for every loaded activity, with active/comparison line styles and filenames below the chart.
+- Restricted telemetry wheel zoom and navigation to the horizontal time axis.
+- Updated Undo/Redo tooltips to explicitly describe the last-action behavior.
+
+FIT Editor v0.3.2
+=================
+
+- Added smooth DPI-aware tile rendering for Windows display scaling.
+- Added high-quality pixmap filtering, text antialiasing and physical-pixel alignment on the map.
+- Metrics missing from the active track, including sensor fields filled only with zeros, are now grey, disabled and omitted from the chart/readout.
+- Added drag-to-move for an existing timeline selection while preserving its duration.
+- Kept press-drag-release creation when dragging outside the existing selection.
+
+FIT Editor v0.3.1
+=================
+
+- Fixed false FIT validation warnings for Zepp component-expanded RECORD messages.
+- Validation now reports only real failures introduced during export.
+- Rebuilt edited FIT files canonically and verified them by reopening with CRC checks.
+- Fixed Yandex route alignment with its default WGS84 ellipsoidal Mercator projection.
+- Kept spherical Mercator for OpenStreetMap and Google Maps.
+- Fit-route now includes all valid segments and adds reliable viewport padding.
+- Simplified the map overlay to a provider dropdown without the redundant Map label.
+- Renamed the map tooltip to Fit entire route / Показать весь маршрут.
+- Added icons to Open and Save As; replaced Undo/Redo text with arrow controls.
+- Replaced telemetry checkboxes with high-contrast toggle pills.
+
+FIT Editor v0.3.0
+=================
+
+- Moved the map selector into a floating upper-right overlay.
+- Replaced the text fit-route action with a square icon button.
+- Added simultaneous multi-file loading for FIT, GPX and TCX.
+- Added a colour-coded track list with per-track map visibility.
+- Added a 0–30 visual Smooth slider without modifying source data.
+- Enabled antialiasing and rounded telemetry curves.
+- Changed range selection to press-drag-release directly on the chart.
+- Added summary icons for duration, distance, points, average HR and average speed.
+
+FIT Editor v0.2.1
+=================
+
+- Fixed world-scale routes caused by FIT invalid GPS markers.
+- Fixed huge distance totals caused by uint32 invalid values.
+- Filtered invalid speed, heart-rate, cadence, power and altitude markers.
+- Added plausibility checks and GPS-distance fallback.
+- Split implausible GPS jumps and ignored isolated outliers for map auto-fit.
+- Combined all five telemetry tracks into one chart.
+- Added individual show/hide switches for every telemetry series.
+- Added optional per-series normalisation and original-value cursor readout.
+- Prevented graph axes and selection handles from moving below zero.
+- Replaced the English pyqtgraph menu with a translated RU/EN menu.
+
+FIT Editor v0.2.0
+=================
+
+- Added global Russian / English interface switch.
+- Added native map tiles under the GPS route.
+- Added OpenStreetMap, Yandex Maps and Google Maps switching.
+- Added local map-tile caching.
+- Added map pan, zoom and fit-to-route controls.
+- Added GPX activity parsing and same-format export.
+- Added TCX activity parsing and same-format export.
+- Added Undo / Redo buttons and keyboard shortcuts.
+- Made Crop, Delete range and Reset undoable.
+- Updated Open and Drag&Drop filters for FIT / GPX / TCX.
+- Updated portable EXE collection rules and dependencies.
+
+FIT Editor v0.1.0
+=================
+
+- Initial offline desktop build.
+- FIT file loading and drag & drop.
+- GPS route viewer on an empty canvas.
+- Telemetry tracks: speed, heart rate, cadence, power, altitude.
+- Synchronized timeline selection.
+- Crop / delete range / reset operations.
+- Preserve-mode FIT export foundation.
+- Post-save decode/validation check.
+- Windows start.bat with automatic virtual environment setup.
+- Windows portable EXE build helper.

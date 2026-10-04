@@ -1,0 +1,6 @@
+PySide6>=6.7,<7
+pyqtgraph>=0.13.7,<0.15
+numpy>=1.26,<3
+fit-tool==0.9.16
+gpxpy>=1.6.2,<2
+psutil>=5.9,<8
